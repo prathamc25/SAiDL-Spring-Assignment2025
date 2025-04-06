@@ -11,7 +11,7 @@ This repository contains my submissions for the Society for Artificial Intellige
 
 ### Diffusion Models
 - [Diffusion Project Report](./Diffusion/Report%20for%20Core_ML.pdf)
-- [Diffusion Results](./Diffusion/results/)
+- [Diffusion Results](./Diffusion/Results/)
 
 ### Core Machine Learning
 - [CoreML Project Report](./CoreML/diffusion_report.pdf)
