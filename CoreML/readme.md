@@ -1,10 +1,31 @@
-# Robust Loss Functions for Noisy Label Learning
 
-This repository contains a PyTorch implementation for training neural networks on datasets with noisy labels. The code evaluates various loss functions designed to be robust against label noise, including vanilla, normalized, and APL (Active Passive Losses) functions.
+# Robust Loss Functions for Noisy Label Learning 
+
+[![PyTorch](https://img.shields.io/badge/PyTorch-1.0+-red.svg)](https://pytorch.org/)
+[![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+
+This repository contains a PyTorch implementation for training neural networks on datasets with noisy labels. The code evaluates various loss functions designed to be robust against label noise.
+
+##  Table of Contents
+- [Overview](#overview)
+- [Features](#features)
+- [Loss Functions](#loss-functions)
+- [Model Architecture](#model-architecture)
+- [Configuration](#configuration)
+- [Noise Types](#noise-types)
+- [Experiments](#experiments)
+- [Running the Code](#running-the-code)
+- [Visualization](#visualization)
+- [Directory Structure](#directory-structure)
+- [Requirements](#requirements)
+- [Citation](#citation)
+- [License](#license)
 
 ## Overview
 
-Training deep neural networks requires large amounts of labeled data, but the process of collecting accurate labels can be challenging. This project explores different loss functions designed to handle noisy labels in classification tasks, comparing their performance across various noise settings.
+Training deep neural networks requires large amounts of labeled data, but the process of collecting accurate labels can be challenging. This project explores different loss functions designed to handle noisy labels effectively, improving model robustness in real-world scenarios.
+
+Take a look at our [noise pattern visualizations](./Noisy%20dataset%20Plots/Noise_patterns.pdf) to understand the types of label corruption we're addressing.
 
 ## Features
 
@@ -36,6 +57,8 @@ The implemented loss functions are organized into three groups:
 - **NFL+NCE**: Normalized Focal Loss + Normalized Cross-Entropy
 - **MAE+RCE**: Mean Absolute Error + Reverse Cross-Entropy
 
+For implementation details, check out the [CoreML_Implementation.ipynb](./CoreML_Implementation.ipynb) notebook.
+
 ## Model Architecture
 
 The project uses a CNN8 architecture:
@@ -43,6 +66,8 @@ The project uses a CNN8 architecture:
 - 3 blocks of ConvBN-ConvBN-MaxPool
 - 256 feature maps in the last convolutional layer
 - 2-layer fully connected classifier
+
+The complete model implementation can be found in the [implementation notebook](./CoreML_Implementation.ipynb).
 
 ## Configuration
 
@@ -73,6 +98,8 @@ The code supports two types of label noise:
 - **Symmetric Noise**: Labels are randomly flipped to any other class with equal probability
 - **Asymmetric Noise**: Labels are flipped to specific classes based on a pre-defined transition matrix (mimicking real-world confusion patterns)
 
+You can see visualizations of these noise patterns in the [Noisy dataset Plots](./Noisy%20dataset%20Plots/) directory.
+
 ## Experiments
 
 The experiment suite evaluates all loss functions against varying noise levels:
@@ -80,9 +107,11 @@ The experiment suite evaluates all loss functions against varying noise levels:
 - **Symmetric Noise**: 20%, 40%, 60%, 80%
 - **Asymmetric Noise**: 10%, 20%, 30%, 40%
 
+For detailed results and analysis, see the [implementation notebook](./CoreML_Implementation.ipynb).
+
 ## Running the Code
 
-The complete training pipeline is provided in the notebook. To run an experiment:
+The complete training pipeline is provided in the [implementation notebook](./CoreML_Implementation.ipynb). To run an experiment:
 
 1. Set the desired configuration parameters
 2. Select the noise type and rate
@@ -105,18 +134,45 @@ The code includes functions to visualize:
 - Comparison plots across noise rates
 - Group comparisons between different loss function families
 
+Example visualizations can be found in the [Noisy dataset Plots](./Noisy%20dataset%20Plots/) directory.
+
+## Directory Structure
+
+```
+CoreML/
+├── CoreML_Implementation.ipynb   # Main implementation notebook
+├── Noisy dataset Plots/          # Visualization outputs
+│   └── Noise_patterns.pdf        # Visualization of noise patterns
+└── readme.md                     # This documentation file
+```
+
 ## Requirements
 
-- PyTorch
-- torchvision
-- NumPy
-- Matplotlib
-- tqdm
+- [PyTorch](https://pytorch.org/)
+- [torchvision](https://pytorch.org/vision/stable/index.html)
+- [NumPy](https://numpy.org/)
+- [Matplotlib](https://matplotlib.org/)
+- [tqdm](https://github.com/tqdm/tqdm)
+
+Install dependencies with:
+```bash
+pip install torch torchvision numpy matplotlib tqdm
+```
 
 ## Citation
 
-If you find this code useful in your research, please consider citing the original papers that introduced these loss functions.
+If you find this code useful in your research, please consider citing the original papers that introduced these loss functions:
+
+```bibtex
+@inproceedings{ma2020normalized,
+  title={Normalized Loss Functions for Deep Learning with Noisy Labels},
+  author={Ma, Xingjun and Huang, Hanxun and Wang, Yisen and Romano, Simone and Erfani, Sarah and Bailey, James},
+  booktitle={ICML},
+  year={2020}
+}
+```
 
 ## License
 
 This project is open-source and available for research and educational purposes.
+```
