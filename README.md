@@ -10,11 +10,11 @@ This repository contains my submissions for the Society for Artificial Intellige
 ## Quick Links
 
 ### Diffusion Models
-- [Diffusion Project Report](./Diffusion/Report%20for%20Core_ML.pdf)
+- [Diffusion Project Report](./Diffusion/diffusion_report.pdf)
 - [Diffusion Results](./Diffusion/Results/)
 
 ### Core Machine Learning
-- [CoreML Project Report](./CoreML/diffusion_report.pdf)
+- [CoreML Project Report](./CoreML/Report%20for%20Core_ML.pdf)
 
 
 
