@@ -21,6 +21,6 @@ The code is implemented in Python using PyTorch, with detailed methodology and r
 
 ## Author
 
-[Pratham Chhabria](https://github.com/prathamc25)
+[Pratham Chheda](https://github.com/prathamc25)
 
 Last Updated: 2025-04-06
